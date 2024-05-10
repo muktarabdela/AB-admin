@@ -92,6 +92,7 @@ const Property = () => {
             </button>
           </div>
           <div className="text-sm text-gray-500">
+            <p className='p-3'>Type: <span className='text-green-500 px-5'>{propertyData.type || ""}</span></p>
             <p className='p-3'>Title: <span className='text-green-500 px-5'>{propertyData.title || ""}</span></p>
             <p className='p-3'>Description: <span className='text-green-500 px-5'>{propertyData.description || ""}</span></p>
             <p className='p-3'>Location: <span className='text-green-500 px-5'>{propertyData.location || ""}</span></p>
