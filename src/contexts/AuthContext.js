@@ -50,11 +50,15 @@ export const AuthProvider = ({ children }) => {
 
     // Function to check if token is expired
     const isTokenExpired = (token) => {
+        // Decode the token
         const decodedToken = jwtDecode(token);
-        console.log(decodedToken)
+        // Get current time in seconds
+        console.log("check is token expired", decodedToken.exp)
         const currentTime = Date.now() / 1000;
+        // Check if token expiry time is less than current time
         return decodedToken.exp < currentTime;
     };
+
     // Function to logout if token is expired
     const checkTokenExpiration = () => {
         const token = localStorage.getItem('token');
@@ -66,7 +70,8 @@ export const AuthProvider = ({ children }) => {
     // Use useEffect to check token expiration periodically
     useEffect(() => {
         // Check token expiration every 5 minutes (adjust as needed)
-        const interval = setInterval(checkTokenExpiration, 5 * 60 * 1000);
+        const interval = setInterval(checkTokenExpiration, 1000);
+
         // Clear interval on component unmount
         return () => clearInterval(interval);
     }, []);
@@ -93,3 +98,6 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+
+
