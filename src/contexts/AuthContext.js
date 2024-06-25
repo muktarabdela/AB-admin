@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { loginAdmin } from '../api/admin';
-
 import { jwtDecode } from "jwt-decode";
 
 // Create a context for authentication
@@ -66,7 +65,9 @@ export const AuthProvider = ({ children }) => {
 
     // Use useEffect to check token expiration periodically
     useEffect(() => {
-        const interval = setInterval(checkTokenExpiration, 1000);
+        // Check token expiration every 5 minutes (adjust as needed)
+        const interval = setInterval(checkTokenExpiration, 5 * 60 * 1000);
+        // Clear interval on component unmount
         return () => clearInterval(interval);
     }, []);
 

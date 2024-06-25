@@ -48,9 +48,11 @@ const AddProperty = () => {
             for (let i = 0; i < formData.images.length; i++) {
                 const formDataCloudinary = new FormData();
                 formDataCloudinary.append('file', formData.images[i]);
-                formDataCloudinary.append('upload_preset', 'images');
-                const response = await axios.post('https://api.cloudinary.com/v1_1/do7kscbrk/image/upload', formDataCloudinary);
-                // console.log(response);
+                formDataCloudinary.append('upload_preset', 'user_images');
+
+                const response = await axios.post('https://api.cloudinary.com/v1_1/dczvebr3j/image/upload', formDataCloudinary);
+
+                console.log(response);
                 uploadedImageUrls.push(response.data.secure_url);
             }
             const formDataWithImageUrls = {
