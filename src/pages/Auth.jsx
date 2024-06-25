@@ -45,7 +45,8 @@ const Auth = () => {
                                         htmlFor="email"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        username                                  </label>
+                                        username
+                                    </label>
                                     <input
                                         value={formData.username}
                                         onChange={handleChange}

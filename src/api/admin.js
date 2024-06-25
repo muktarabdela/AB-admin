@@ -1,6 +1,5 @@
 import axiosInstance from './axios';
 
-
 // define api for register
 export const registerAdmin = async (adminData) => {
     try {
@@ -12,7 +11,6 @@ export const registerAdmin = async (adminData) => {
     }
 }
 // define api for login
-
 export const loginAdmin = async (adminData) => {
     try {
         const response = await axiosInstance.post('/admin/login', adminData);

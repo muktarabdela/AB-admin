@@ -27,13 +27,12 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 const Navbar = () => {
   const { logout } = useAuth();
   const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext()
+
   useEffect(() => {
     const handleResize = () => setScreenSize
       (window.innerWidth)
     window.addEventListener('resize', handleResize)
-
     handleResize()
-
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
