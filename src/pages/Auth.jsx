@@ -85,12 +85,12 @@ const Auth = () => {
                                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required=""
                                         />
-                                        <div className='absolute ml-[16em] lg:ml-[20em] mt-2'>
+                                        <div className='absolute ml-[16em] lg:ml-[21em] mt-2'>
 
                                             {show ? (
                                                 <svg
                                                     onClick={togglePasswordHide}
-                                                    className='absolute left-[21em] bottom-[2em] cursor-pointer'
+                                                    className=' cursor-pointer'
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width={25}
                                                     height={25}
